@@ -489,3 +489,75 @@ test("Test lte (shortcut for isLessThanOrEqualTo) with float", () => {
     )
     todo("Test the base parameter")
 })
+
+test("Test isNegative with int", () => {
+    // when negative
+    let big_num = big_number_int(-6)
+    assert_bool(
+        ~left=big_num->is_negative_int,
+        ~right=true,
+        ~operator="is_negative_int true",
+        ~message="Passing test with big_num is negative"
+    )
+    // when positive
+    let big_num = big_number_int(6)
+    assert_bool(
+        ~left=big_num->is_negative_int,
+        ~right=false,
+        ~operator="is_negative_int false",
+        ~message="Passing test with big_num is not negative"
+    )
+})
+
+test("Test isNegative with float", () => {
+    // when negative
+    let big_num = big_number_float(-6.9)
+    assert_bool(
+        ~left=big_num->is_negative_float,
+        ~right=true,
+        ~operator="is_negative_float true",
+        ~message="Passing test with big_num is negative"
+    )
+    // when positive
+    let big_num = big_number_float(6.9)
+    assert_bool(
+        ~left=big_num->is_negative_float,
+        ~right=false,
+        ~operator="is_negative_int false",
+        ~message="Passing test with big_num is not negative"
+    )
+})
+
+test("Test isZero with int", () => {
+    // when zero
+    assert_bool(
+        ~left=big_number_int(0)->int_is_zero,
+        ~right=true,
+        ~operator="int_is_zero true",
+        ~message="Passing test with big_num is zero"
+    )
+    // when not zero
+    assert_bool(
+        ~left=big_number_int(6)->int_is_zero,
+        ~right=false,
+        ~operator="int_is_zero false",
+        ~message="Passing test with big_num is not zero"
+    )
+})
+
+test("Test isZero with float", () => {
+    // when zero
+    assert_bool(
+        ~left=big_number_float(0.0)->float_is_zero,
+        ~right=true,
+        ~operator="float_is_zero true",
+        ~message="Passing test with big_num is zero"
+    )
+    // when not zero
+    assert_bool(
+        ~left=big_number_float(6.8)->float_is_zero,
+        ~right=false,
+        ~operator="float_is_zero false",
+        ~message="Passing test with big_num is not zero"
+    )
+})

@@ -18,6 +18,8 @@ type big_float
 @send external to_int: (big_int) => int = "toNumber"
 @send external to_float: (big_float) => float = "toNumber"
 
+// return a boolean value
+
 @send external is_equal_to_int: (big_int, int, ~base: option<int>=?, unit) => bool = "isEqualTo"
 @send external is_equal_to_float: (big_float, float, ~base: option<int>=?, unit) => bool = "isEqualTo"
 @send external eq_int: (big_int, int, ~base: option<int>=?, unit) => bool = "eq"
@@ -42,3 +44,16 @@ type big_float
 @send external is_less_than_or_equal_to_float: (big_float, float, ~base: option<int>=?, unit) => bool = "isLessThanOrEqualTo"
 @send external lte_int: (big_int, int, ~base: option<int>=?, unit) => bool = "lte"
 @send external lte_float: (big_float, float, ~base: option<int>=?, unit) => bool = "lte"
+
+@send external is_negative_int: big_int => bool = "isNegative"
+@send external is_negative_float: big_float => bool = "isNegative"
+
+@send external int_is_zero: big_int => bool = "isZero"
+@send external float_is_zero: big_float => bool = "isZero"
+
+// return a BigNumber
+
+@send external minus_int: (big_int, int) => big_int = "minus"
+@send external minus_float: (big_float, int) => big_float = "minus"
+@send external minus_big_int: (big_int, big_int) => big_int = "minus"
+@send external minus_big_float: (big_float, big_float) => big_float = "minus"
