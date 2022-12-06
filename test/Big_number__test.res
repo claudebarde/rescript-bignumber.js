@@ -561,3 +561,217 @@ test("Test isZero with float", () => {
         ~message="Passing test with big_num is not zero"
     )
 })
+
+test("Test minus with int", () => {
+    // positive int
+    assert_int(
+        ~left=big_number_int(6)->minus_int(4, ~base=None, ())->to_int,
+        ~right=2,
+        ~operator="minus int",
+        ~message="Passing test with big_num minus positive int"
+    )
+    // negative int
+    assert_int(
+        ~left=big_number_int(6)->minus_int(8, ~base=None, ())->to_int,
+        ~right=-2,
+        ~operator="minus int",
+        ~message="Passing test with big_num minus negative int"
+    )
+})
+
+test("Test minus with float", () => {
+    // positive float
+    assert_float(
+        ~left=big_number_float(6.2)->minus_float(4.1, ~base=None, ())->to_float,
+        ~right=2.1,
+        ~operator="minus float",
+        ~message="Passing test with big_num minus positive float"
+    )
+    // negative float
+    assert_float(
+        ~left=big_number_float(6.2)->minus_float(8.1, ~base=None, ())->to_float,
+        ~right=-1.9,
+        ~operator="minus float",
+        ~message="Passing test with big_num minus negative float"
+    )
+})
+
+test("Test minus with big_int", () => {
+    // positive big_int
+    assert_int(
+        ~left=big_number_int(6)->minus_big_int(big_number_int(4), ~base=None, ())->to_int,
+        ~right=2,
+        ~operator="minus big_int",
+        ~message="Passing test with big_num minus positive big_int"
+    )
+    // negative int
+    assert_int(
+        ~left=big_number_int(6)->minus_big_int(big_number_int(8), ~base=None, ())->to_int,
+        ~right=-2,
+        ~operator="minus big_int",
+        ~message="Passing test with big_num minus negative big_int"
+    )
+})
+
+test("Test minus with big_float", () => {
+    // positive big_float
+    assert_float(
+        ~left=big_number_float(6.2)->minus_big_float(big_number_float(4.1), ~base=None, ())->to_float,
+        ~right=2.1,
+        ~operator="minus big_float",
+        ~message="Passing test with big_num minus positive big_float"
+    )
+    // negative int
+    assert_float(
+        ~left=big_number_float(6.2)->minus_big_float(big_number_float(8.1), ~base=None, ())->to_float,
+        ~right=-1.9,
+        ~operator="minus big_float",
+        ~message="Passing test with big_num minus negative big_float"
+    )
+})
+
+test("Test modulo with int", () => {
+    assert_int(
+        ~left=big_number_int(6)->modulo_int(4, ~base=None, ())->to_int,
+        ~right=2,
+        ~operator="modulo int",
+        ~message="Passing test with big_num modulo positive int"
+    )
+})
+
+test("Test modulo with float", () => {
+    assert_float(
+        ~left=big_number_float(6.2)->modulo_float(4.1, ~base=None, ())->to_float,
+        ~right=2.1,
+        ~operator="modulo float",
+        ~message="Passing test with big_num modulo positive float"
+    )
+})
+
+test("Test minus with big_int", () => {
+    assert_int(
+        ~left=big_number_int(6)->modulo_big_int(big_number_int(4), ~base=None, ())->to_int,
+        ~right=2,
+        ~operator="modulo big_int",
+        ~message="Passing test with big_num modulo positive big_int"
+    )
+})
+
+test("Test minus with big_float", () => {
+    assert_float(
+        ~left=big_number_float(6.2)->modulo_big_float(big_number_float(4.1), ~base=None, ())->to_float,
+        ~right=2.1,
+        ~operator="modulo big_float",
+        ~message="Passing test with big_num modulo positive big_float"
+    )
+})
+
+test("Test multipliedBy with int", () => {
+    assert_int(
+        ~left=big_number_int(6)->multiplied_by_int(4, ~base=None, ())->to_int,
+        ~right=24,
+        ~operator="multipliedBy int",
+        ~message="Passing test with big_num multipliedBy positive int"
+    )
+})
+
+test("Test multipliedBy with float", () => {
+    assert_float(
+        ~left=big_number_float(6.2)->multiplied_by_float(4.3, ~base=None, ())->to_float,
+        ~right=26.66,
+        ~operator="multipliedBy float",
+        ~message="Passing test with big_num multipliedBy positive float"
+    )
+})
+
+test("Test multipliedBy with big_int", () => {
+    assert_int(
+        ~left=big_number_int(6)->multiplied_by_big_int(big_number_int(4), ~base=None, ())->to_int,
+        ~right=24,
+        ~operator="multipliedBy big_int",
+        ~message="Passing test with big_num multipliedBy positive big_int"
+    )
+})
+
+test("Test multipliedBy with big_float", () => {
+    assert_float(
+        ~left=big_number_float(6.2)->multiplied_by_big_float(big_number_float(4.3), ~base=None, ())->to_float,
+        ~right=26.66,
+        ~operator="multipliedBy big_float",
+        ~message="Passing test with big_num multipliedBy positive big_float"
+    )
+})
+
+test("Test times with int", () => {
+    assert_int(
+        ~left=big_number_int(6)->times_int(4, ~base=None, ())->to_int,
+        ~right=24,
+        ~operator="times int",
+        ~message="Passing test with big_num times positive int"
+    )
+})
+
+test("Test times with float", () => {
+    assert_float(
+        ~left=big_number_float(6.2)->times_float(4.3, ~base=None, ())->to_float,
+        ~right=26.66,
+        ~operator="times float",
+        ~message="Passing test with big_num times positive float"
+    )
+})
+
+test("Test times with big_int", () => {
+    assert_int(
+        ~left=big_number_int(6)->times_big_int(big_number_int(4), ~base=None, ())->to_int,
+        ~right=24,
+        ~operator="times big_int",
+        ~message="Passing test with big_num times positive big_int"
+    )
+})
+
+test("Test times with big_float", () => {
+    assert_float(
+        ~left=big_number_float(6.2)->times_big_float(big_number_float(4.3), ~base=None, ())->to_float,
+        ~right=26.66,
+        ~operator="times big_float",
+        ~message="Passing test with big_num times positive big_float"
+    )
+})
+
+///
+
+test("Test plus with int", () => {
+    assert_int(
+        ~left=big_number_int(6)->plus_int(4, ~base=None, ())->to_int,
+        ~right=10,
+        ~operator="plus int",
+        ~message="Passing test with big_num plus positive int"
+    )
+})
+
+test("Test plus with float", () => {
+    assert_float(
+        ~left=big_number_float(6.2)->plus_float(4.3, ~base=None, ())->to_float,
+        ~right=10.5,
+        ~operator="plus float",
+        ~message="Passing test with big_num plus positive float"
+    )
+})
+
+test("Test timpluses with big_int", () => {
+    assert_int(
+        ~left=big_number_int(6)->plus_big_int(big_number_int(4), ~base=None, ())->to_int,
+        ~right=10,
+        ~operator="plus big_int",
+        ~message="Passing test with big_num plus positive big_int"
+    )
+})
+
+test("Test plus with big_float", () => {
+    assert_float(
+        ~left=big_number_float(6.2)->plus_big_float(big_number_float(4.3), ~base=None, ())->to_float,
+        ~right=10.5,
+        ~operator="plus big_float",
+        ~message="Passing test with big_num plus positive big_float"
+    )
+})

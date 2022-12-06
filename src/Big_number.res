@@ -53,7 +53,27 @@ type big_float
 
 // return a BigNumber
 
-@send external minus_int: (big_int, int) => big_int = "minus"
-@send external minus_float: (big_float, int) => big_float = "minus"
-@send external minus_big_int: (big_int, big_int) => big_int = "minus"
-@send external minus_big_float: (big_float, big_float) => big_float = "minus"
+@send external minus_int: (big_int, int, ~base: option<int>=?, unit) => big_int = "minus"
+@send external minus_float: (big_float, float, ~base: option<int>=?, unit) => big_float = "minus"
+@send external minus_big_int: (big_int, big_int, ~base: option<int>=?, unit) => big_int = "minus"
+@send external minus_big_float: (big_float, big_float, ~base: option<int>=?, unit) => big_float = "minus"
+
+@send external modulo_int: (big_int, int, ~base: option<int>=?, unit) => big_int = "modulo"
+@send external modulo_float: (big_float, float, ~base: option<int>=?, unit) => big_float = "modulo"
+@send external modulo_big_int: (big_int, big_int, ~base: option<int>=?, unit) => big_int = "modulo"
+@send external modulo_big_float: (big_float, big_float, ~base: option<int>=?, unit) => big_float = "modulo"
+// creating 4 more functions to cover "mod" doesn't seem necessary
+
+@send external multiplied_by_int: (big_int, int, ~base: option<int>=?, unit) => big_int = "multipliedBy"
+@send external multiplied_by_float: (big_float, float, ~base: option<int>=?, unit) => big_float = "multipliedBy"
+@send external multiplied_by_big_int: (big_int, big_int, ~base: option<int>=?, unit) => big_int = "multipliedBy"
+@send external multiplied_by_big_float: (big_float, big_float, ~base: option<int>=?, unit) => big_float = "multipliedBy"
+@send external times_int: (big_int, int, ~base: option<int>=?, unit) => big_int = "times"
+@send external times_float: (big_float, float, ~base: option<int>=?, unit) => big_float = "times"
+@send external times_big_int: (big_int, big_int, ~base: option<int>=?, unit) => big_int = "times"
+@send external times_big_float: (big_float, big_float, ~base: option<int>=?, unit) => big_float = "times"
+
+@send external plus_int: (big_int, int, ~base: option<int>=?, unit) => big_int = "plus"
+@send external plus_float: (big_float, float, ~base: option<int>=?, unit) => big_float = "plus"
+@send external plus_big_int: (big_int, big_int, ~base: option<int>=?, unit) => big_int = "plus"
+@send external plus_big_float: (big_float, big_float, ~base: option<int>=?, unit) => big_float = "plus"
